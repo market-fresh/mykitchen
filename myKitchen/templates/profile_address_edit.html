@@ -1,0 +1,25 @@
+{% extends "profile_home.html" %}
+
+{% block profile %}
+<form method="post" name="Form" onsubmit="return validateForm()" action="">
+  <div>
+    <div>
+      Billing Address<br>
+      <input id='first_name' name='first_name'>
+    </div>
+
+    <div>
+      Shipping Address<br>
+      Default<br>
+      <input id='username' name='username'><br>
+      Other<br>
+      <input id='country' name='country'>
+    </div>
+
+    <div>
+      <button>Save</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

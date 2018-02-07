@@ -1,0 +1,39 @@
+{% extends "profile_home.html" %}
+
+{%block title%} - Recipe List {% endblock %}
+
+{%block profile%}
+
+<div id="profile-recipe-list">
+  Recipe List
+</div>
+
+<script>
+(function(){
+  var recipeListAPI = "http://127.0.0.1:8000/recipe/"
+  $.getJSON( recipeListAPI, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<li id='" + key + "'>" + val.user + "</li>" );
+      $.each( val.user_name, function( k, v ) {items.push( "<li id='" + k + "'> " + v.username + "</li>" );});
+      items.push( "<li id='" + key + "'>"  + "Name: " +  val.name + "</li>" );
+      items.push( "<li id='" + key + "'>" + "Subheader: " + val.subheader + "</li>" );
+      items.push( "Cover Photo: <img id='" + key + "' src ='" + val.cover_photo + "' alt = '" + val.cover_photo + "'>" );
+      $.each( val.categories, function( k, v ) {items.push( "<li id='" + k + "'> " + v.name + ":" + v.value + "</li>" );});
+      $.each( val.tags, function( k, v ) {items.push( "<li id='" + k + "'> " + "Tags: " + v.tags + "</li>" );});
+      items.push( "<li id='" + key + "'>"  + "Views: " + val.view_count + "</li>" );
+      items.push( "<li id='" + key + "'>"  + "Likes: " +  val.like_count + "</li>" );
+      items.push( "<br>" );
+
+    });
+
+    $( "<ul/>", {
+      "class": "recipe-list",
+      html: items.join( "" )
+    }).appendTo( "#profile-recipe-list" );
+  });
+})();
+
+</script>
+
+{% endblock %}

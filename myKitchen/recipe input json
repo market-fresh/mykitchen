@@ -1,0 +1,28 @@
+{
+    "user": 5,
+    "name": "Curry Fish Head",
+    "subheader": "",
+    "story": "",
+    "cover_photo": "",
+    "video_link": "",
+    "status": 1,
+    "steps": [{
+        "step_id": 1,
+        "name": "Chop Garlic",
+        "description": "",
+        "photo": ""
+    }],
+    "ingredients": [{
+        "name": "Garlic",
+        "price": 0.8,
+        "quantity": 1,
+        "measure": "piece"
+    }],
+    "category":[{
+        "category_name": "Method",
+        "value": "Stew"
+    }],
+    "tags": [{
+        "tags": "curry"
+    }]
+}

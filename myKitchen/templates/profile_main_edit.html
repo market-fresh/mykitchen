@@ -1,0 +1,55 @@
+{% extends "profile_home.html" %}
+
+{% block profile %}
+  <form method="post" name="Form" onsubmit="return validateForm()" action="">
+    <div>
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-6">
+            <label for="first_name">First Name</label><br>
+            <input id='first_name' name='first_name'>
+          </div>
+          <div class="col-xs-6">
+            <label for="last_name">Last Name</label><br>
+            <input id='last_name' name='last_name'>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-6">
+          <label for="username">Username</label><br>
+          <input id='username' name='username'>
+        </div>
+        <div class="col-xs-6">
+          <label for="country">Country</label><br>
+          <input id='country' name='country'>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-6">
+          <label for="email">Email</label><br>
+          <input id='email' name='email'>
+        </div>
+        <div class="col-xs-6">
+          <label for="password">Change Password</label><br>
+          <input id='password' name='password'>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-6">
+          <label for="biography">About Me</label><br>
+          <input id='biography' name='biography'>
+        </div>
+        <div class="col-xs-6">
+          <label for="confirm_password">Password Again</label><br>
+          <input id='confirm_password' name='confirm_password'><br>
+          <label for="newsletter">Newsletter subscription</label><br>
+          <button>Save</button>
+        </div>
+        <br>
+      </div>
+    </div>
+  </form>
+{% endblock %}

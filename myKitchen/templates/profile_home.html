@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{%block title%} - Edit Profile {% endblock %}
+
+{%block content%}
+  <div class="text-center">
+    {{username}}'s Dashboard<br>
+  </div>
+  <br>
+  <div class="container-fluid text-center">
+    <div class="text-center">
+      Total Recipes: {{ count_recipes }}
+      Following: {{ count_following }}
+      Followers: {{ count_followers }}
+      Lifetime Views: {{ count_views }}
+      Total Earnings: {{ sum_purchased }}
+      Recipes sold: {{ count_purchased }}
+    </div>
+    <br>
+
+    <div class="col-xs-2 sidenav text-center">
+      <img/><br>
+      <a role="button" href="http://127.0.0.1:8000/profile_edit/">Edit Profile</a><br>
+      <a role="button" href="">My Accounts</a><br>
+      <a role="button" href="http://127.0.0.1:8000/profile_address_edit">Address Book</a><br>
+      <a role="button" href="">My Orders</a><br>
+      <a role="button" href="http://127.0.0.1:8000/profile_recipe_list">My Recipes</a><br>
+      <a role="button" href="">Favourites</a><br>
+      <a role="button" href="">View History</a><br>
+      </ul>
+    </div>
+
+    <div id="contentarea" class="col-xs-10 text-left content">
+      {% block profile %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

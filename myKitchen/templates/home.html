@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{%block title%} - Home {% endblock %}
+
+{%block content%}
+
+Home Page
+
+<script>
+(function(){
+  var recipeListAPI = "http://127.0.0.1:8000/subscriptions/featured/"
+  $.getJSON( recipeListAPI, function( data ) {
+    var items = [];
+    $.each( data, function( key, val ) {
+      items.push( "<li id='" + key + "'>"  + "Name: " +  val.name + "</li>" );
+      items.push( "Cover Photo: <img id='" + key + "' src ='" + val.cover_photo + "' alt = '" + val.cover_photo + "'>" );
+      items.push( "<li id='" + key + "'>"  + "Likes: " +  val.created_date + "</li>" );
+      items.push( "<br>" );
+
+    });
+
+    $( "<ul/>", {
+      "class": "recipe-list",
+      html: items.join( "" )
+    }).appendTo( "body" );
+  });
+})();
+
+</script>
+
+{% endblock %}

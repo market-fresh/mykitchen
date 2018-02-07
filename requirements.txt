@@ -1,0 +1,10 @@
+Install Python 3.6
+pip install virtualenv
+pip intall virtualenvwrapper
+Update .bash_profile and .bashrc
+
+pip install Django 1.11
+pip install djangorestframework
+pip install Pillow
+pip install django-filter
+pip install django psycopg2

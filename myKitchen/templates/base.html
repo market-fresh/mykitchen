@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>myKitchen {% block title %} {% endblock %}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+  <body>
+
+    <div>
+      <a href="http://127.0.0.1:8000/home">myKitchen</a>
+    </div>
+    <div class="text-right">
+      <div class="panel col-md-16">
+        <a href="http://marketfresh.com.sg">Shop</a>
+        <a href="http://127.0.0.1:8000/recipe_list/">Recipes</a>
+        <a href="http://127.0.0.1:8000/recipe_create/">Submit Recipe</a>
+        <a href="">Register</a>
+        <a href="">Login</a>
+        Hi, <a href="http://127.0.0.1:8000/profile/">username{{ username}}!</a>
+        <a href="">Cart</a>
+        <a href="">Search</a>
+        <a href="http://127.0.0.1:8000/admin_app/">Admin</a>
+
+      </div>
+    </div>
+
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{%block title%} - Profile {% endblock %}
+
+{%block content%}
+  <div class="text-center">
+    {{username}}'s Profile<br>
+  </div>
+  <br>
+  <div class="container-fluid text-center">
+    <div class="text-center">
+      Total Recipes: {{ count_recipes}}
+      Following: {{ count_following}}
+      Followers: {{ count_followers}}
+    </div>
+  </div>
+  <br>
+  <div class="col-xs-2 sidenav text-center">
+    <img/><br>
+    <a role="button" href="http://127.0.0.1:8000/home/">Home</a><br>
+    <a role="button" href="http://127.0.0.1:8000/profile/">About</a><br>
+    <a role="button" href="http://127.0.0.1:8000/recipe_list/">Recipes</a><br>
+    <a role="button" href="">Favourites</a>
+  </div>
+
+  <div id="contentarea" class="col-xs-10 text-left content">
+    <div>
+      About Me
+      Member since: {{created_date}}
+      <textarea id='biography' name='biography'></textarea>
+      <a href="http://127.0.0.1:8000/profile_edit">edit</a>
+    </div>
+  </div>
+{% endblock %}
